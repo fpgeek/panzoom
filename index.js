@@ -489,13 +489,13 @@ function createPanZoom(domElement, options) {
 
   function onKeyDown(e) {
     var x = 0, y = 0, z = 0
-    if (e.keyCode === 38) {
+    if (e.keyCode === 40) {
       y = 1 // up
-    } else if (e.keyCode === 40) {
+    } else if (e.keyCode === 38) {
       y = -1 // down
-    } else if (e.keyCode === 37) {
-      x = 1 // left
     } else if (e.keyCode === 39) {
+      x = 1 // left
+    } else if (e.keyCode === 37) {
       x = -1 // right
     } else if (e.keyCode === 189 || e.keyCode === 109) { // DASH or SUBTRACT
       z = 1 // `-` -  zoom out
@@ -508,7 +508,7 @@ function createPanZoom(domElement, options) {
       return;
     }
 
-    if (x || y) {
+    if (panEnabled && (x || y)) {
       e.preventDefault()
       e.stopPropagation()
 
