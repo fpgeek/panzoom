@@ -22,6 +22,7 @@ declare module "panzoom" {
     onDoubleClick?: (e: Event) => void;
     smoothScroll?: boolean;
     controller?: SVGElement | HTMLElement;
+    panDisable?: boolean;
   }
 
   export interface PanZoom {
@@ -50,6 +51,9 @@ declare module "panzoom" {
     fire: (eventName: string) => void;
     getMinZoom: () => number;
     getMaxZoom: () => number;
+    enablePan: () => void;
+    disablePan: () => void;
+    isPanEnabled: () => boolean;
   }
 
   export default function createPanZoom(

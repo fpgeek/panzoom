@@ -67,7 +67,7 @@ function createPanZoom(domElement, options) {
   var beforeWheel = options.beforeWheel || noop
   var speed = typeof options.zoomSpeed === 'number' ? options.zoomSpeed : defaultZoomSpeed
 
-  var panEnabled = (options.panEnabled !== undefined) ? options.panEnabled : true
+  var panEnabled = (options.panDisable !== undefined) ? !options.panDisable : true
 
   validateBounds(bounds)
 
