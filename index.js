@@ -113,6 +113,7 @@ function createPanZoom(domElement, options) {
     moveBy: internalMoveBy,
     moveTo: moveTo,
     centerOn: centerOn,
+    moveToInit: moveToInit,
     zoomTo: publicZoomTo,
     zoomAbs: zoomAbs,
     smoothZoom: smoothZoom,
@@ -263,6 +264,10 @@ function createPanZoom(domElement, options) {
 
   function moveBy(dx, dy) {
     moveTo(transform.x + dx, transform.y + dy)
+  }
+
+  function moveToInit() {
+    panController.initTransform(transform)
   }
 
   function keepTransformInsideBounds() {
