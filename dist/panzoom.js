@@ -275,6 +275,11 @@ function createPanZoom(domElement, options) {
       transform.x = 0
       transform.y = 0
     }
+
+    triggerEvent('pan')
+    triggerEvent('zoom')
+
+    makeDirty()
   }
 
   function keepTransformInsideBounds() {
