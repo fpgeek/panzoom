@@ -267,7 +267,13 @@ function createPanZoom(domElement, options) {
   }
 
   function moveToInit() {
-    panController.initTransform(transform)
+    if (panController.initTransform) {
+      panController.initTransform(transform)
+    } else {
+      transform.scale = 1
+      transform.x = 0
+      transform.y = 0
+    }
   }
 
   function keepTransformInsideBounds() {
